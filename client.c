@@ -112,14 +112,12 @@ int main(int argc, char const *argv[])
         int total_bytes_sent = send(sock, message, strlen(message), 0);
         if (total_bytes_sent <= 0)
         {
-            printf("Total Bytes Sent error.\n");
             exit(-1);
         }
         memset(buffer, 0, sizeof(buffer));
         int total_bytes_read = read(sock, buffer, 500);
         if (total_bytes_read <= 0)
         {
-            printf("Total Bytes Read error.\n");
             exit(-1);
         }
         printf("%s\n", buffer);
